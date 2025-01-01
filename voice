@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speak Button</title>
+  <style>
+
+    /* Style for the speak button */
+    .speak-button {
+      width: 50px;
+      height: 50px;
+      border: none;
+      background-color: #ffffff; /* Green color */
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Make the image fit inside the button */
+    .speak-button img {
+      width: 50px;  /* Adjust the size of the logo */
+      height: 50px;
+    }
+
+    /* Optional: Add a hover effect */
+    .speak-button:hover {
+      background-color: #e7ca25;
+    }
+  </style>
+</head>
+<body>
+  <!-- Speak button with logo -->
+  <button class="speak-button" onclick="speak()">
+    <img src="https://raw.githubusercontent.com/Alokm4/image/refs/heads/main/speaker.png" alt="Voice Logo">
+  </button>
+
+<script>
+  // JavaScript function to make the browser speak in Nepali
+  function speak() {
+    const message = new SpeechSynthesisUtterance("यहाँ कक्षा १२ को खाता समाधान छ।");
+    message.lang = "ne-NP";  // Set the language to Nepali
+    window.speechSynthesis.speak(message);
+  }
+</script>
+</body>
+</html>
